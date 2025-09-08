@@ -1,5 +1,5 @@
-import { blogPosts } from "@/lib/data";
-import { ArticleCard } from "@/components/shared/ArticleCard";
+import { blogPosts } from "../../libs/data";
+import { ArticleCard } from "../../components/shared/ArticleCard";
 
 export default function BlogPage() {
   return (

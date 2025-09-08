@@ -6,8 +6,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+} from "../ui/card";
+import { Badge } from "../ui/badge";
 import { ArrowRight } from "lucide-react";
 
 export function ProjectCard({ project }) {

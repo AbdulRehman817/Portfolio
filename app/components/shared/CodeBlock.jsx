@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import { Clipboard, Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "./ui/tooltip";
 
 export function CodeBlock({ code }) {
   const [hasCopied, setHasCopied] = useState(false);

@@ -1,9 +1,8 @@
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import { Toaster } from "@/components/ui/toaster";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-
+import { cn } from "./libs/utils";
+import { Toaster } from "./components/ui/toaster";
+import { Header } from "./components/layout/Header";
+import { Footer } from "./components/layout/Footer";
 export const metadata = {
   title: "Abdul Rehman | Creative Developer",
   description: "A modern portfolio for a creative developer.",

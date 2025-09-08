@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/components/ui/button";
+import { Button } from "./components/ui/button";
 import {
   ArrowRight,
   Download,
@@ -20,12 +20,12 @@ import {
   Component,
 } from "lucide-react";
 import Link from "next/link";
-import { ProjectCard } from "@/components/shared/ProjectCard";
-import { blogPosts, projects } from "@/lib/data";
-import { ArticleCard } from "@/components/shared/ArticleCard";
-import { Badge } from "@/components/ui/badge";
+import { ProjectCard } from "./components/shared/ProjectCard";
+import { blogPosts, projects } from "./libs/data";
+import { ArticleCard } from "./components/shared/ArticleCard";
+import { Badge } from "./components/ui/badge";
 import { TypeAnimation } from "react-type-animation";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "./components/ui/card";
 
 const skills = [
   { name: "HTML", icon: <Code className="w-8 h-8" /> },

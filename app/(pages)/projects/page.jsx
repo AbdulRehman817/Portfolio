@@ -1,5 +1,5 @@
-import { projects } from "@/lib/data";
-import { ProjectCard } from "@/components/shared/ProjectCard";
+import { projects } from "../../libs/data";
+import { ProjectCard } from "../../components/shared/ProjectCard";
 
 export default function ProjectsPage() {
   return (
