@@ -1,18 +1,7 @@
 export const projects = [
   {
-    slug: "interactive-dashboard",
-    title: "Interactive Data Dashboard",
-    description:
-      "A responsive and dynamic data visualization dashboard built with Next.js and Recharts.",
-    longDescription:
-      "This project showcases a fully interactive dashboard for visualizing complex datasets. It features real-time data updates, customizable charts, and a sleek, modern UI designed for optimal user experience. Built with Next.js for server-side rendering and performance, and Recharts for powerful data visualization capabilities.",
-    image: "https://picsum.photos/800/600?random=1",
-    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Recharts"],
-    githubUrl: "https://github.com/AbdulRehman817",
-    liveUrl: "https://example.com",
-  },
-  {
     slug: "shopping-store",
+    date: "2025",
     title: "Shopping Store",
     description:
       "A responsive e-commerce app built with Next.js, TypeScript, MongoDB/Mongoose, and Tailwind CSS.",
@@ -25,6 +14,7 @@ export const projects = [
   },
   {
     slug: "e-commerce-platform",
+    date: "2024",
     title: "E-Commerce Platform",
     description:
       "A full-featured e-commerce platform built with React JS, Mongo DB, and Tailwind CSS.",
@@ -35,27 +25,31 @@ export const projects = [
     githubUrl: "https://github.com/AbdulRehman817/E-Commerce-Website-ReactJs",
     liveUrl: "https://e-commerce-website-react-js-gules.vercel.app/",
   },
+
   {
-    slug: "ai-powered-chatbot",
-    title: "AI-Powered Chatbot",
+    slug: "chat-app",
+    title: "Chat App",
+    date: "2025",
     description:
-      "An intelligent chatbot using natural language processing to provide customer support.",
+      "A real-time chat application with user authentication, live messaging, and a modern UI.",
+
     longDescription:
-      "This project is an AI-powered chatbot designed to handle customer support inquiries. It leverages natural language processing (NLP) to understand and respond to user queries in a human-like manner. The chatbot is integrated into a web application and can be trained on custom knowledge bases.",
+      "This project is a feature-rich real-time chat application built for seamless communication. It includes user authentication, responsive design, and instant message delivery using Firebase. The application supports private messaging, message status indicators, all wrapped in an intuitive and sleek user interface.",
+
     image: "https://picsum.photos/800/600?random=3",
-    tags: ["Python", "Flask", "NLP", "React", "WebSockets"],
-    githubUrl: "https://github.com/AbdulRehman817",
-    liveUrl: "https://example.com",
+    tags: ["React", "Firebase", "Tailwind CSS"],
+    githubUrl: "https://github.com/AbdulRehman817/Chat-App",
+    liveUrl: "https://chat-app-sc7o.vercel.app/",
   },
 ];
 
-export const blogPosts = [
+export const articles = [
   {
     slug: "nextjs-deployment-guide",
     title: "A Complete Guide to Deploying Your Next.js Application",
     description:
       "Learn how to confidently deploy your Next.js app using both manual and Vercel methods.",
-    date: "2025-09-01",
+    date: "2025",
     author: "Abdul Rehman",
     image:
       "https://i.ytimg.com/vi/YVqdpSsCnK4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB1rhGevE7Cmi1k3QbVhKm01TUbag",
@@ -164,7 +158,7 @@ npx vercel
     image:
       "https://cdn1.leapcell.io/3374238960f2226ac2-34c6-4ee2-9dc5-1c746ed6629c.png",
     author: "Abdul Rehman",
-    date: "2024-07-15",
+    date: "2025",
     tags: ["React", "Animation", "Framer Motion", "UI/UX"],
     content: `
 <p>
@@ -298,7 +292,7 @@ You can combine motion, gestures, and variants for interactive components:
       "Dive deep into Tailwind's grid system to build responsive and intricate layouts with ease and precision.",
     image: "https://img-c.udemycdn.com/course/480x270/2257056_575c_6.jpg",
     author: "Abdul Rehman",
-    date: "2024-07-10",
+    date: "2025",
     tags: ["Tailwind CSS", "CSS", "Web Development", "Responsive Design"],
     content: `
 <p class="text-lg mb-8">

@@ -17,8 +17,8 @@ const mockProject = {
 };
 
 export function ProjectCard({ project = mockProject, mode = "once" }) {
-  const [showNumbers, setShowNumbers] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [showNumbers, setShowNumbers] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [hasIncremented, setHasIncremented] = useState(false);
 
@@ -66,10 +66,24 @@ export function ProjectCard({ project = mockProject, mode = "once" }) {
             }`}
           >
             <button className="p-2 bg-black/30 backdrop-blur-md rounded-full text-white hover:bg-orange-500/80 transition-colors">
-              <ExternalLink className="w-4 h-4" />
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-black/30 backdrop-blur-md rounded-full text-white hover:bg-orange-500/80 transition-colors"
+              >
+                <ExternalLink className="w-4 h-4" />
+              </a>
             </button>
             <button className="p-2 bg-black/30 backdrop-blur-md rounded-full text-white hover:bg-orange-500/80 transition-colors">
-              <Github className="w-4 h-4" />
+              <Link
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-black/30 backdrop-blur-md rounded-full text-white hover:bg-orange-500/80 transition-colors"
+              >
+                <Github className="w-4 h-4" />
+              </Link>
             </button>
           </div>
 
@@ -87,7 +101,7 @@ export function ProjectCard({ project = mockProject, mode = "once" }) {
             </div>
             <div className="flex items-center gap-1 bg-black/30 backdrop-blur-md px-2 py-1 rounded-full">
               <Calendar className="w-3 h-3" />
-              <span>2024</span>
+              <span>{project.date}</span>
             </div>
           </div>
         </div>

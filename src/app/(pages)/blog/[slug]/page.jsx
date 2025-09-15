@@ -1,4 +1,4 @@
-import { blogPosts } from "@/lib/data";
+import { articles } from "@/lib/data";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { SupportDialog } from "@/components/shared/SupportDialog";
@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
+  return articles.map((post) => ({
     slug: post.slug,
   }));
 }
