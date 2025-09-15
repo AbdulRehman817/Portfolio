@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { ArrowRight, ExternalLink, Github, Calendar, Eye } from "lucide-react";
 import { projects } from "@/lib/data";
+import { useEffect } from "react";
+import Link from "next/link";
 
 // Mock project data for fallback
 const mockProject = {
@@ -14,10 +16,18 @@ const mockProject = {
   slug: "interactive-dashboard",
 };
 
-export function ProjectCard({ project = mockProject }) {
+export function ProjectCard({ project = mockProject, mode = "once" }) {
+  const [showNumbers, setShowNumbers] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [hasIncremented, setHasIncremented] = useState(false);
 
+  useEffect(() => {
+    if (mode === "once" && isHovered && !hasIncremented) {
+      setShowNumbers((prev) => prev + 1);
+      setHasIncremented(true);
+    }
+  }, [isHovered, mode, hasIncremented]);
   return (
     <div
       className="flex flex-col h-full overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/25 hover:-translate-y-3 bg-card group relative border-2 border-card-700 hover:border-orange-500/30 rounded-lg"
@@ -27,7 +37,7 @@ export function ProjectCard({ project = mockProject }) {
       {/* Subtle glow effect */}
       <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500/0 via-orange-500/10 to-orange-500/0 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
 
-      <a
+      <Link
         href={`/projects/${project.slug}`}
         className="block overflow-hidden relative"
       >
@@ -73,7 +83,7 @@ export function ProjectCard({ project = mockProject }) {
           >
             <div className="flex items-center gap-1 bg-black/30 backdrop-blur-md px-2 py-1 rounded-full">
               <Eye className="w-3 h-3" />
-              <span>2.3k</span>
+              <span>{showNumbers.toLocaleString()}</span>
             </div>
             <div className="flex items-center gap-1 bg-black/30 backdrop-blur-md px-2 py-1 rounded-full">
               <Calendar className="w-3 h-3" />
@@ -81,7 +91,7 @@ export function ProjectCard({ project = mockProject }) {
             </div>
           </div>
         </div>
-      </a>
+      </Link>
 
       {/* Card Header */}
       <div className="p-6 pb-3">
