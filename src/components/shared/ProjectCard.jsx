@@ -1,7 +1,9 @@
+"use client";
 import React, { useState } from "react";
 import { ArrowRight, ExternalLink, Github, Calendar, Eye } from "lucide-react";
+import { projects } from "@/lib/data";
 
-// Mock project data for demonstration
+// Mock project data for fallback
 const mockProject = {
   title: "Interactive Data Dashboard",
   description:
@@ -39,11 +41,10 @@ export function ProjectCard({ project = mockProject }) {
             className={`w-full h-full object-cover group-hover:scale-110 transition-all duration-700 ${
               imageLoaded ? "opacity-100" : "opacity-0"
             }`}
-            data-ai-hint="abstract technology"
             onLoad={() => setImageLoaded(true)}
           />
 
-          {/* Gradient overlay on hover */}
+          {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
           {/* Floating action buttons */}
@@ -62,7 +63,7 @@ export function ProjectCard({ project = mockProject }) {
             </button>
           </div>
 
-          {/* Project stats overlay */}
+          {/* Project stats */}
           <div
             className={`absolute bottom-4 left-4 flex items-center gap-3 text-white/90 text-sm transition-all duration-300 ${
               isHovered
@@ -99,7 +100,6 @@ export function ProjectCard({ project = mockProject }) {
         <p className="text-slate-400 text-sm line-clamp-3 leading-relaxed mb-4">
           {project.description}
         </p>
-
         <div className="flex flex-wrap gap-2">
           {project.tags.slice(0, 3).map((tag, index) => (
             <span
@@ -109,7 +109,6 @@ export function ProjectCard({ project = mockProject }) {
                   ? "bg-orange-500/5 text-orange-500/80 border-orange-500/20"
                   : "bg-card-800 text-card-300 border-slate-600"
               }`}
-              style={{ animationDelay: `${index * 100}ms` }}
             >
               {tag}
             </span>
@@ -130,13 +129,9 @@ export function ProjectCard({ project = mockProject }) {
             className="flex items-center font-semibold opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-x-2"
           >
             <span className="text-orange-500 mr-2">View Details</span>
-            <div className="relative">
-              <ArrowRight className="w-4 h-4 text-orange-500 transition-transform duration-300 group-hover:translate-x-1" />
-              <ArrowRight className="absolute top-0 left-0 w-4 h-4 text-orange-500 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-2" />
-            </div>
+            <ArrowRight className="w-4 h-4 text-orange-500 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
 
-          {/* Progress indicator */}
           <div className="w-12 h-1 bg-slate-700 rounded-full overflow-hidden">
             <div
               className={`h-full bg-gradient-to-r from-orange-500 to-orange-400 transition-all duration-700 ${
@@ -157,63 +152,55 @@ export function ProjectCard({ project = mockProject }) {
   );
 }
 
-// Demo grid component
-// const ProjectGrid = () => {
-//   const projects = [
-//     mockProject,
-//     { ...mockProject, title: "E-Commerce Platform" },
-//     { ...mockProject, title: "Mobile Banking App" },
-//   ];
-
-return (
-  <div className="min-h-screen bg-slate-950 p-8">
-    <div className="max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-12 text-white">
-        Featured Projects
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="animate-fade-in-up"
-            style={{ animationDelay: `${index * 150}ms` }}
-          >
-            {/* <ProjectGrid project={project} /> */}
-          </div>
-        ))}
+// ✅ Project Grid Component
+export default function ProjectGrid() {
+  return (
+    <div className="min-h-screen bg-slate-950 p-8">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-3xl font-bold text-center mb-12 text-white">
+          Featured Projects
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="animate-fade-in-up"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
+              <ProjectCard project={project} />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
 
-    <style jsx>{`
-      @keyframes fade-in-up {
-        from {
+      <style jsx>{`
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in-up {
+          animation: fade-in-up 0.6s ease-out forwards;
           opacity: 0;
-          transform: translateY(30px);
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
+        .line-clamp-3 {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
-      }
-      .animate-fade-in-up {
-        animation: fade-in-up 0.6s ease-out forwards;
-        opacity: 0;
-      }
-      .line-clamp-3 {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-      }
-      .line-clamp-2 {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-      }
-    `}</style>
-  </div>
-);
-// };
-
-export default ProjectCard;
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      `}</style>
+    </div>
+  );
+}

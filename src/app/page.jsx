@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import ProjectCard from "@/components/shared/ProjectCard";
+import { ProjectCard } from "@/components/shared/ProjectCard";
 import { ArticleCard } from "@/components/shared/ArticleCard";
 import { blogPosts, projects } from "@/lib/data";
 import { TypeAnimation } from "react-type-animation";
