@@ -344,8 +344,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { ProjectCard } from "@/components/shared/ProjectCard";
-import { articles, projects } from "@/lib/data";
-import { ArticleCard } from "@/components/shared/ArticleCard";
+import { projects } from "@/lib/data";
+
 import { Badge } from "@/components/ui/badge";
 import { TypeAnimation } from "react-type-animation";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -369,7 +369,7 @@ const skills = [
 
 export default function Home() {
   const featuredProjects = projects.slice(0, 3);
-  const latestArticles = articles.slice(0, 3);
+  const lates = articles.slice(0, 3);
 
   return (
     <div className="flex flex-col">
@@ -516,28 +516,6 @@ export default function Home() {
       </section>
 
       {/* Latest Articles Section */}
-      <section className="py-24 bg-card/50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">Latest Articles</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              My thoughts on development, design, and more.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {latestArticles.map((post) => (
-              <ArticleCard key={post.slug} article={post} baseUrl="/blog" />
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Button asChild variant="outline">
-              <Link href="/blog">
-                Read The Blog <Rss className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-24 text-white bg-gradient-to-r from-orange-600 via-orange-500 to-orange-600 relative overflow-hidden">
