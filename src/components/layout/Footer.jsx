@@ -2,7 +2,6 @@ import { Github, Linkedin, Code } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import Image from "next/image";
 
 const navItems = [
   { href: "/about", label: "About" },
@@ -19,16 +18,17 @@ export function Footer() {
           {/* Logo + About */}
           <div className="flex flex-col gap-5">
             <Link href="/" className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-[#FF6A00] rounded-lg flex items-center justify-center">
+                <Code className="h-6 w-6 text-white" />
+              </div>
               <span className="font-bold font-headline text-2xl">
-                <Image
-                  src="/unnamed__1_-removebg-preview.png"
-                  width="130"
-                  height="130"
-                  alt=""
-                  className="relative right-[20px] bottom-[30px]"
-                />
+                Abdul Rehman
               </span>
             </Link>
+            <p className="text-muted-foreground leading-relaxed max-w-sm">
+              Creative developer passionate about building modern web
+              experiences.
+            </p>
           </div>
 
           {/* Quick Links */}

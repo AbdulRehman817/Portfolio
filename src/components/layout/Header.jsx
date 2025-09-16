@@ -8,7 +8,6 @@ import { Code, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 const navItems = [
   { href: "/about", label: "About" },
@@ -26,17 +25,11 @@ export function Header() {
       <div className="container flex h-20 items-center justify-between px-4 md:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          {/* <div className="w-10 h-10 bg-[#FF6A00] rounded-lg flex items-center justify-center"> */}
-          {/* <Code className="w-6 h-6 text-white" /> */}
-          {/* </div> */}
+          <div className="w-10 h-10 bg-[#FF6A00] rounded-lg flex items-center justify-center">
+            <Code className="w-6 h-6 text-white" />
+          </div>
           <span className="text-xl md:text-2xl font-bold font-headline text-foreground">
-            <Image
-              src="/unnamed__1_-removebg-preview.png"
-              width="130"
-              height="130"
-              alt=""
-              className="relative right-[20px]"
-            />
+            Abdul Rehman
           </span>
         </Link>
 
