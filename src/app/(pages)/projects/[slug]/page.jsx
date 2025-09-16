@@ -15,6 +15,7 @@ import {
   Users,
   Target,
   Clock,
+  CheckCircle,
 } from "lucide-react";
 import { SupportDialog } from "@/components/shared/SupportDialog";
 import { Separator } from "@/components/ui/separator";
@@ -34,21 +35,9 @@ export default function ProjectDetailPage({ params }) {
 
   return (
     <div className="min-h-screen bg-card-50 dark:bg-card-950">
-      {/* Simple Header */}
-
-      {/* Main Content */}
       <main className="container mx-auto px-6 py-12 max-w-6xl">
         {/* Project Header */}
         <div className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <Badge className="bg-[#FF6A00]/10 text-[#FF6A00] border-[#FF6A00]/20">
-              {project.category || "Web Application"}
-            </Badge>
-            <span className="text-sm text-gray-500 dark:text-gray-400">
-              {project.year || "2024"}
-            </span>
-          </div>
-
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             {project.title}
           </h1>
@@ -57,54 +46,7 @@ export default function ProjectDetailPage({ params }) {
             {project.description}
           </p>
 
-          {/* Action Buttons */}
-          <div className="flex flex-wrap gap-4 mb-8">
-            <Button className="bg-[#FF6A00] hover:bg-orange-600 text-white">
-              <Globe className="mr-2 h-4 w-4" />
-              View Live Demo
-            </Button>
-            <Button
-              variant="outline"
-              className="border-gray-300 dark:border-gray-600"
-            >
-              <Github className="mr-2 h-4 w-4" />
-              View Source Code
-            </Button>
-          </div>
-
           {/* Project Meta */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-6 border-t border-b border-gray-200 dark:border-gray-800">
-            <div>
-              <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-                Duration
-              </div>
-              <div className="font-semibold text-gray-900 dark:text-white">
-                {project.duration || "3 months"}
-              </div>
-            </div>
-            <div>
-              <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-                Team Size
-              </div>
-              <div className="font-semibold text-gray-900 dark:text-white">
-                {project.team || "4 members"}
-              </div>
-            </div>
-            <div>
-              <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-                Role
-              </div>
-              <div className="font-semibold text-gray-900 dark:text-white">
-                Lead Developer
-              </div>
-            </div>
-            <div>
-              <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-                Status
-              </div>
-              <div className="font-semibold text-green-600">Completed</div>
-            </div>
-          </div>
         </div>
 
         {/* Project Image */}
@@ -137,7 +79,7 @@ export default function ProjectDetailPage({ params }) {
                       "This project was designed to solve real-world problems through thoughtful user experience design and robust development. The focus was on creating a solution that is both powerful and easy to use."}
                   </p>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Throughout the development process, we prioritized clean
+                    Throughout the development process, I prioritized clean
                     code, performance optimization, and user feedback to ensure
                     the final product meets high standards of quality and
                     usability.
@@ -146,38 +88,31 @@ export default function ProjectDetailPage({ params }) {
               </div>
             </section>
 
-            {/* Results & Impact */}
+            {/* Key Features (Instead of Results & Impact) */}
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                Results & Impact
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+                <CheckCircle className="w-6 h-6 text-[#FF6A00]" />
+                Key Features
               </h2>
               <div className="bg-white dark:bg-card rounded-lg border border-gray-200 dark:border-gray-800 p-8">
-                <div className="grid md:grid-cols-3 gap-8">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-[#FF6A00] mb-2">
-                      98%
-                    </div>
-                    <div className="text-gray-600 dark:text-gray-400">
-                      User Satisfaction
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-[#FF6A00] mb-2">
-                      50%
-                    </div>
-                    <div className="text-gray-600 dark:text-gray-400">
-                      Faster Load Times
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-[#FF6A00] mb-2">
-                      100%
-                    </div>
-                    <div className="text-gray-600 dark:text-gray-400">
-                      Project Success
-                    </div>
-                  </div>
-                </div>
+                <ul className="space-y-4 text-gray-700 dark:text-gray-300">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#FF6A00] mt-1" />
+                    <span>Responsive UI with modern, minimal design.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#FF6A00] mt-1" />
+                    <span>Optimized performance and fast load times.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#FF6A00] mt-1" />
+                    <span>Clean codebase with reusable components.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#FF6A00] mt-1" />
+                    <span>Dark mode support for better accessibility.</span>
+                  </li>
+                </ul>
               </div>
             </section>
           </div>
@@ -254,7 +189,7 @@ export default function ProjectDetailPage({ params }) {
                       Team Size
                     </span>
                     <span className="text-gray-900 dark:text-white font-medium">
-                      {project.team || "4 members"}
+                      Me
                     </span>
                   </div>
                   <Separator />
