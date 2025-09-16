@@ -49,15 +49,25 @@ export default function Home() {
   const latestArticles = articles.slice(0, 3);
 
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col bg-[#3b3b3b]-950">
       {/* Hero Section */}
-      <section className="py-24 md:py-32 bg-card/50">
-        <div className="container px-4 mx-auto text-center">
-          <Badge variant="secondary" className="mb-4">
+      <section className="py-24 md:py-32 relative overflow-hidden bg-[#3b3b3b]-950">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-[#3b3b3b]-950 to-orange-500/5" />
+        <div className="absolute top-20 right-20 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-orange-500/5 rounded-full blur-3xl" />
+
+        <div className="container px-4 mx-auto text-center relative z-10">
+          <Badge
+            variant="secondary"
+            className="mb-4 bg-[#3b3b3b]-800/50 backdrop-blur-sm border border-[#3b3b3b]-700/50 text-[#3b3b3b]-300"
+          >
             Creative Developer & Designer
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">
-            Abdul Rehman
+            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
+              Abdul Rehman
+            </span>
           </h1>
           <TypeAnimation
             sequence={[
@@ -70,20 +80,25 @@ export default function Home() {
             ]}
             wrapper="p"
             speed={50}
-            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto"
+            className="text-lg md:text-xl text-[#3b3b3b]-400 mb-8 max-w-xl mx-auto"
             repeat={Infinity}
           />
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               asChild
               size="lg"
-              className="bg-[#FF6A00]/80 hover:bg-[#FF6A00] text-white"
+              className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white shadow-lg shadow-orange-500/25 transform hover:scale-105 transition-all duration-300"
             >
               <Link href="/projects">
                 Explore My Work <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="secondary">
+            <Button
+              asChild
+              size="lg"
+              variant="secondary"
+              className="bg-[#3b3b3b]-800/50 backdrop-blur-sm hover:bg-[#3b3b3b]-700/50 border border-[#3b3b3b]-700/50 hover:border-orange-500/30 text-white"
+            >
               <a href="/resume.pdf" download>
                 Download CV <Download className="ml-2 h-5 w-5" />
               </a>
@@ -93,27 +108,33 @@ export default function Home() {
       </section>
 
       {/* About Me */}
-      <section className="py-24">
+      <section className="py-24 bg-[#3b3b3b]-900">
         <div className="container max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">About Me</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              About Me
+            </h2>
+            <p className="mt-4 text-lg text-[#3b3b3b]-400">
               My journey, my passion, and my purpose.
             </p>
           </div>
-          <div className="bg-card p-8 md:p-12 rounded-xl shadow-lg text-lg text-center text-foreground/80 space-y-6">
+          <div className="bg-[#3b3b3b]-800/50 backdrop-blur-sm border border-[#3b3b3b]-700/50 p-8 md:p-12 rounded-2xl shadow-xl text-lg text-center text-[#3b3b3b]-300 space-y-6">
             <p>
-              Hi, I’m Abdul Rehman — a developer who loves creating web
+              Hi, I'm Abdul Rehman — a developer who loves creating web
               applications that are not only functional but also enjoyable to
               use. For me, coding is about more than just writing lines of code
-              — it’s about turning ideas into experiences.
+              — it's about turning ideas into experiences.
             </p>
             <p>
               I started out curious about how websites worked, and that evolved
               into a passion. Now, I enjoy solving problems, experimenting with
               design, and building creative yet practical solutions.
             </p>
-            <Button asChild variant="outline">
+            <Button
+              asChild
+              variant="outline"
+              className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white border-orange-500/30 hover:border-orange-400 transform hover:scale-105 transition-all duration-300"
+            >
               <Link href="/about">Learn More About Me</Link>
             </Button>
           </div>
@@ -121,11 +142,17 @@ export default function Home() {
       </section>
 
       {/* Skills Grid */}
-      <section className="py-24 bg-card/50 w-full">
-        <div className="container mx-auto px-4">
+      <section className="py-24 bg-[#3b3b3b]-800 w-full relative">
+        {/* Subtle background glow */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#3b3b3b]-900 via-[#3b3b3b]-800 to-[#3b3b3b]-900" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">My Toolkit</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              My Toolkit
+            </h2>
+            <p className="mt-4 text-lg text-[#3b3b3b]-400">
               The technologies I use to bring ideas to life.
             </p>
           </div>
@@ -133,48 +160,53 @@ export default function Home() {
             {skills.map((skill) => (
               <Card
                 key={skill.name}
-                className="text-[#FF6A00] bg-background/50 flex flex-col items-center justify-center p-6 text-center hover:bg-[#FF6A00]/10 cursor transition-colors duration-300"
+                className="text-orange-500 bg-[#3b3b3b]-800/50 backdrop-blur-sm border border-[#3b3b3b]-700/50 hover:border-orange-500/50 flex flex-col items-center justify-center p-6 text-center hover:bg-orange-500/5 cursor-pointer transition-all duration-300 transform hover:scale-105"
               >
-                <div className="mb-3">{skill.icon}</div>
-                <p className="font-semibold text-foreground">{skill.name}</p>
+                <div className="mb-3 group-hover:scale-110 transition-transform duration-300">
+                  {skill.icon}
+                </div>
+                <p className="font-semibold text-white group-hover:text-orange-400 transition-colors duration-300">
+                  {skill.name}
+                </p>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mb-[100px] mt-[100px] ">
+      {/* Developer Reflections */}
+      <section className="mb-[100px] mt-[100px] bg-[#3b3b3b]-950">
         <div className="container mx-auto px-4 max-w-3xl">
           {/* Heading */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center gap-2 text-primary mb-2">
-              <Terminal className="w-6 h-6" />
-              <span className="text-xl font-semibold tracking-wide uppercase">
+            <div className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#3b3b3b]-800/50 backdrop-blur-sm border border-[#3b3b3b]-700/50 rounded-full text-orange-500 text-sm font-medium mb-4">
+              <Terminal className="w-4 h-4" />
+              <span className="text-lg font-semibold tracking-wide uppercase">
                 Developer Reflections
               </span>
             </div>
-            <p className="mt-2 text-muted-foreground text-lg">
+            <p className="mt-2 text-[#3b3b3b]-400 text-lg">
               Insights, philosophies, and thoughts that guide my code.
             </p>
           </div>
 
           {/* Terminal-style Quote Block */}
-          <div className="bg-card border-l-4 border-primary rounded-lg shadow-xl overflow-hidden">
-            <div className="bg-foreground/5 p-3 flex items-center gap-2">
+          <div className="bg-[#3b3b3b]-800/50 backdrop-blur-sm border border-[#3b3b3b]-700/50 border-l-4 border-l-orange-500 rounded-2xl shadow-2xl overflow-hidden">
+            <div className="bg-[#3b3b3b]-900/50 p-3 flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-red-500"></div>
               <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
               <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              <p className="text-sm text-muted-foreground ml-auto">
+              <p className="text-sm text-[#3b3b3b]-400 ml-auto font-mono">
                 /dev/thoughts
               </p>
             </div>
-            <div className="p-6 font-code text-green-400">
-              <span className="text-primary mr-2">$</span>
+            <div className="p-8 font-mono">
+              <span className="text-orange-500 mr-2 text-lg">$</span>
               <TypeAnimation
                 sequence={[
                   `"The best products are built at the intersection of clean code and thoughtful design."`,
                   5000,
-                  `"Code is like humor. When you have to explain it, it’s bad." - Cory House`,
+                  `"Code is like humor. When you have to explain it, it's bad." - Cory House`,
                   5000,
                   `"Simplicity is the soul of efficiency." - Austin Freeman`,
                   5000,
@@ -183,7 +215,7 @@ export default function Home() {
                 speed={80}
                 cursor
                 repeat={Infinity}
-                className="text-foreground/90"
+                className="text-[#3b3b3b]-300 text-lg"
               />
             </div>
           </div>
@@ -191,13 +223,13 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section className="py-24">
+      <section className="py-24 bg-[#3b3b3b]-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
               Featured Projects
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <p className="mt-4 text-lg text-[#3b3b3b]-400">
               A selection of my proudest work.
             </p>
           </div>
@@ -207,7 +239,11 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Button asChild variant="outline">
+            <Button
+              asChild
+              variant="outline"
+              className="bg-[#3b3b3b]-800/50 backdrop-blur-sm hover:bg-[#3b3b3b]-700/50 border border-[#3b3b3b]-700/50 hover:border-orange-500/30 text-white"
+            >
               <Link href="/projects">
                 View All Projects <Briefcase className="ml-2 h-4 w-4" />
               </Link>
@@ -217,11 +253,13 @@ export default function Home() {
       </section>
 
       {/* Articles */}
-      <section className="py-24 bg-card/50">
+      <section className="py-24 bg-[#3b3b3b]-800">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">Latest Articles</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              Latest Articles
+            </h2>
+            <p className="mt-4 text-lg text-[#3b3b3b]-400">
               My thoughts on development, design, and more.
             </p>
           </div>
@@ -231,7 +269,11 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Button asChild variant="outline">
+            <Button
+              asChild
+              variant="outline"
+              className="bg-[#3b3b3b]-800/50 backdrop-blur-sm hover:bg-[#3b3b3b]-700/50 border border-[#3b3b3b]-700/50 hover:border-orange-500/30 text-white"
+            >
               <Link href="/blog">
                 Read The Blog <Rss className="ml-2 h-4 w-4" />
               </Link>
@@ -241,20 +283,41 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 text-white bg-[#FF6A00]">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4">
+      <section className="py-24 text-white bg-gradient-to-r from-orange-600 via-orange-500 to-orange-600 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(255,255,255,0.05)_0%,transparent_50%)]" />
+
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Let's Build Something Amazing Together
           </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-xl mb-10 max-w-2xl mx-auto text-orange-100 leading-relaxed">
             Have a project in mind or just want to connect? I'd love to hear
-            from you.
+            from you and discuss how we can bring your ideas to life.
           </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link href="/contact">
-              Get In Touch <Feather className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              variant="secondary"
+              asChild
+              className="bg-white text-orange-600 hover:bg-orange-50 font-bold transform hover:scale-105 transition-all duration-300 shadow-lg"
+            >
+              <Link href="/contact">
+                Get In Touch <Feather className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-orange-600 font-bold transition-all duration-300"
+            >
+              <Link href="/projects">
+                View My Work <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </main>

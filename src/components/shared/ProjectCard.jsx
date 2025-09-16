@@ -80,7 +80,7 @@ export function ProjectCard({ project = mockProject, mode = "once" }) {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-black/30 backdrop-blur-md rounded-full text-white hover:bg-orange-500/80 transition-colors"
+                className="p-2  backdrop-blur-md rounded-full text-white hover:bg-orange-500/80 transition-colors"
               >
                 <Github className="w-4 h-4" />
               </Link>
