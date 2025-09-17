@@ -34,7 +34,7 @@ export default function ProjectDetailPage({ params }) {
   }
 
   return (
-    <div className="min-h-screen bg-card-50 dark:bg-card-950">
+    <div className="min-h-screen bg-muted/20 ">
       <main className="container mx-auto px-6 py-12 max-w-6xl">
         {/* Project Header */}
         <div className="mb-12">
@@ -72,7 +72,7 @@ export default function ProjectDetailPage({ params }) {
                 <BookOpen className="w-6 h-6 text-[#FF6A00]" />
                 About This Project
               </h2>
-              <div className="bg-white dark:bg-card rounded-lg border border-gray-200 dark:border-gray-800 p-8">
+              <div className="bg-card rounded-lg border border-gray-200 dark:border-gray-800 p-8">
                 <div className="prose prose-lg dark:prose-invert max-w-none">
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
                     {project.longDescription ||
@@ -94,7 +94,7 @@ export default function ProjectDetailPage({ params }) {
                 <CheckCircle className="w-6 h-6 text-[#FF6A00]" />
                 Key Features
               </h2>
-              <div className="bg-white dark:bg-card rounded-lg border border-gray-200 dark:border-gray-800 p-8">
+              <div className=" bg-card rounded-lg border border-gray-200 dark:border-gray-800 p-8">
                 <ul className="space-y-4 text-gray-700 dark:text-gray-300">
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-[#FF6A00] mt-1" />
@@ -133,7 +133,7 @@ export default function ProjectDetailPage({ params }) {
                     {project.tags?.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-gray-100 dark:bg-card text-gray-700 dark:text-gray-300 text-sm rounded-md border border-gray-200 dark:border-gray-700"
+                        className="px-3 py-1 bg-card text-gray-700 dark:text-gray-300 text-sm rounded-md border border-gray-200 dark:border-gray-700"
                       >
                         {tech}
                       </span>
